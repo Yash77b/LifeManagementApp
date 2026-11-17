@@ -1,6 +1,7 @@
 ﻿using LifeManagementApp.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace LifeManagementApp.Data
 {
     public class AppDbContext : DbContext
