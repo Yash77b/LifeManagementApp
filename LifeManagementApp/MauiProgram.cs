@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using LifeManagementApp.Data;
+using LifeManagementApp.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace LifeManagementApp
 {
@@ -15,11 +18,25 @@ namespace LifeManagementApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // Database: todos.db file in data folder 
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "todos.db");
+            builder.Services.AddDbContext<AppDbContext>(
+                options => options.UseSqlite($"Data Source={dbPath}"),
+                ServiceLifetime.Singleton);
+
+            // Services
+            builder.Services.AddSingleton<ITodoRepository, TodoRepository>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+            var app = builder.Build();
+
+            // Database/TodoItem create from class
+            app.Services.GetRequiredService<AppDbContext>().Database.EnsureCreated();
+
+            return app;
         }
     }
 }
