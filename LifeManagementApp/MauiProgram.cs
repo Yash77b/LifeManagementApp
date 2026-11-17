@@ -1,4 +1,6 @@
-﻿using LifeManagementApp.Data;
+﻿using LifeManagementApp.ViewModels;
+using LifeManagementApp.Views;
+using LifeManagementApp.Data;
 using LifeManagementApp.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -26,6 +28,10 @@ namespace LifeManagementApp
 
             // Services
             builder.Services.AddSingleton<ITodoRepository, TodoRepository>();
+
+            // ViewModels and pages
+            builder.Services.AddTransient<TodoListViewModel>();
+            builder.Services.AddTransient<TodoListPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
