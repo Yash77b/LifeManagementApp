@@ -32,6 +32,8 @@ namespace LifeManagementApp
             // ViewModels and pages
             builder.Services.AddTransient<TodoListViewModel>();
             builder.Services.AddTransient<TodoListPage>();
+            builder.Services.AddTransient<AddTodoViewModel>();
+            builder.Services.AddTransient<AddTodoPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

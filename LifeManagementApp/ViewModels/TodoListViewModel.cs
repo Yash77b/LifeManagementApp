@@ -38,6 +38,13 @@ namespace LifeManagementApp.ViewModels
             ShowSorted(Todos.ToList());
         }
 
+        [RelayCommand]
+        private async Task GoToAddAsync()
+        {
+            await Shell.Current.GoToAsync("AddTodoPage");
+        }
+        // ==============================
+
         private void ShowSorted(List<TodoItem> items)
         {
             List<TodoItem> sorted;
