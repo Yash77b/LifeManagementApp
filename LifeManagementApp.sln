@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeManagementApp", "LifeManagementApp\LifeManagementApp.csproj", "{CEE1C406-EC29-4FAC-875C-04539A995DBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEE1C406-EC29-4FAC-875C-04539A995DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE1C406-EC29-4FAC-875C-04539A995DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE1C406-EC29-4FAC-875C-04539A995DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE1C406-EC29-4FAC-875C-04539A995DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {693B7FC9-3411-4881-9DC5-5C1BCBE514DB}
+	EndGlobalSection
+EndGlobal
