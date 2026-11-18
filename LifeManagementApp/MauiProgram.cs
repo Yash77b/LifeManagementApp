@@ -1,7 +1,7 @@
-﻿using LifeManagementApp.ViewModels;
-using LifeManagementApp.Views;
-using LifeManagementApp.Data;
+﻿using LifeManagementApp.Data;
 using LifeManagementApp.Services;
+using LifeManagementApp.ViewModels;
+using LifeManagementApp.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -20,7 +20,7 @@ namespace LifeManagementApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            // Database: todos.db file in data folder 
+            // Database: 
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "todos.db");
             builder.Services.AddDbContext<AppDbContext>(
                 options => options.UseSqlite($"Data Source={dbPath}"),
@@ -28,6 +28,8 @@ namespace LifeManagementApp
 
             // Services
             builder.Services.AddSingleton<ITodoRepository, TodoRepository>();
+            builder.Services.AddSingleton<HttpClient>();                                  
+            builder.Services.AddSingleton<IWeatherService, OpenMeteoWeatherService>();    
 
             // ViewModels and pages
             builder.Services.AddTransient<TodoListViewModel>();
@@ -41,7 +43,6 @@ namespace LifeManagementApp
 
             var app = builder.Build();
 
-            // Database/TodoItem create from class
             app.Services.GetRequiredService<AppDbContext>().Database.EnsureCreated();
 
             return app;
