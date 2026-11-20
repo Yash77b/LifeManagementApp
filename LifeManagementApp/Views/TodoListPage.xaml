@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:LifeManagementApp.ViewModels"
              xmlns:models="clr-namespace:LifeManagementApp.Models"
+             xmlns:converters="clr-namespace:LifeManagementApp.Converters"
              x:Class="LifeManagementApp.Views.TodoListPage"
              x:DataType="vm:TodoListViewModel"
              Title="To-do">
+
+    <ContentPage.Resources>
+        <converters:PriorityToColorConverter x:Key="PriorityToColor" />
+    </ContentPage.Resources>
 
     <Grid RowDefinitions="Auto,*" Padding="16" RowSpacing="12">
 
@@ -25,7 +30,8 @@
                     <Border Padding="12" Margin="0,4">
                         <VerticalStackLayout>
                             <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
-                            <Label Text="{Binding Priority, StringFormat='Priority: {0}'}" />
+                            <Label Text="{Binding Priority, StringFormat='Priority: {0}'}"
+                                   TextColor="{Binding Priority, Converter={StaticResource PriorityToColor}}" />
                             <Label Text="{Binding DueDate, StringFormat='Due: {0:dd.MM.yyyy}'}" />
                         </VerticalStackLayout>
                     </Border>
