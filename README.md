@@ -4,6 +4,8 @@ A .NET MAUI app that combines a to-do list with the current weather in Vaasa
 and tells you when it is kitesurfing weather.
 
 Author: Buthpitiya Lekamalage Yasodha Bandumali Buthpitiya - e2403004
+
+
 Course: TT00BI73-3008 Client-Side Programming, VAMK
 
 ## Features
