@@ -41,7 +41,7 @@ LifeManagementApp/
 ├── Models/       TodoItem.cs, WeatherInfo.cs, OpenMeteoResponse.cs
 ├── Services/     ITodoRepository.cs, TodoRepository.cs,
 │                 IWeatherService.cs, OpenMeteoWeatherService.cs
-├── ViewModels/   HomeViewModel.cs, TodoListViewModel.cs, AddTodoViewModel.cs
+├── ViewModels/   HomeViewModel.cs, TodoListViewModel.cs, AddTodoViewModel.cs, EditTodoViewModel.cs
 ├── Views/        HomePage, TodoListPage, AddTodoPage, EditTodoPage
 ├── AppShell.xaml   (tabs and routes)
 └── MauiProgram.cs  (DI registrations)
@@ -85,6 +85,8 @@ classDiagram
     HomePage --> HomeViewModel
     TodoListPage --> TodoListViewModel
     AddTodoPage --> AddTodoViewModel
+    EditTodoViewModel --> ITodoRepository
+    EditTodoPage --> EditTodoViewModel
 ```
 
 ## Dependency injection lifetimes
