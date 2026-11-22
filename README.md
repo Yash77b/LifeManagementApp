@@ -18,6 +18,7 @@ Course: TT00BI73-3008 Client-Side Programming, VAMK
   colour for each priority (converter).
 - **Add page:** title, priority (1–5) and due date. An empty title cannot be saved.
 - Data is stored in a local **SQLite** database with **EF Core Code First**.
+- **Edit page:** tap a to-do in the list to edit it or mark it as done (parameter passing with Shell).
 
 ## How to run
 
@@ -41,7 +42,7 @@ LifeManagementApp/
 ├── Services/     ITodoRepository.cs, TodoRepository.cs,
 │                 IWeatherService.cs, OpenMeteoWeatherService.cs
 ├── ViewModels/   HomeViewModel.cs, TodoListViewModel.cs, AddTodoViewModel.cs
-├── Views/        HomePage, TodoListPage, AddTodoPage
+├── Views/        HomePage, TodoListPage, AddTodoPage, EditTodoPage
 ├── AppShell.xaml   (tabs and routes)
 └── MauiProgram.cs  (DI registrations)
 ```
