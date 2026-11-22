@@ -43,6 +43,16 @@ namespace LifeManagementApp.ViewModels
         {
             await Shell.Current.GoToAsync("AddTodoPage");
         }
+
+        [RelayCommand]
+        private async Task GoToEditAsync(TodoItem item)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                { "Todo", item }
+            };
+            await Shell.Current.GoToAsync("EditTodoPage", parameters);
+        }
         // ==============================
 
         private void ShowSorted(List<TodoItem> items)

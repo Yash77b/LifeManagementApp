@@ -28,11 +28,17 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:TodoItem">
                     <Border Padding="12" Margin="0,4">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding GoToEditCommand, Source={RelativeSource AncestorType={x:Type vm:TodoListViewModel}}, x:DataType=vm:TodoListViewModel}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
                             <Label Text="{Binding Priority, StringFormat='Priority: {0}'}"
                                    TextColor="{Binding Priority, Converter={StaticResource PriorityToColor}}" />
                             <Label Text="{Binding DueDate, StringFormat='Due: {0:dd.MM.yyyy}'}" />
+                            <Label Text="✅ Done" IsVisible="{Binding IsDone}" />
                         </VerticalStackLayout>
                     </Border>
                 </DataTemplate>

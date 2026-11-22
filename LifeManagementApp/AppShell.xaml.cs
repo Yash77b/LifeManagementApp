@@ -8,6 +8,7 @@ namespace LifeManagementApp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(AddTodoPage), typeof(AddTodoPage));
+            Routing.RegisterRoute(nameof(EditTodoPage), typeof(EditTodoPage));
         }
     }
 }

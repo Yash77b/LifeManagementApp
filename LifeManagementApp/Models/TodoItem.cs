@@ -1,11 +1,22 @@
-﻿namespace LifeManagementApp.Models
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace LifeManagementApp.Models
 {
-    public class TodoItem
+    public partial class TodoItem : ObservableObject
     {
-        public int Id { get; set; }
-        public string Title { get; set; } = "";
-        public int Priority { get; set; } = 3;
-        public DateTime DueDate { get; set; } = DateTime.Today;
-        public bool IsDone { get; set; }
+        [ObservableProperty]
+        private int id;
+
+        [ObservableProperty]
+        private string title = "";
+
+        [ObservableProperty]
+        private int priority = 3;
+
+        [ObservableProperty]
+        private DateTime dueDate = DateTime.Today;
+
+        [ObservableProperty]
+        private bool isDone;
     }
 }
